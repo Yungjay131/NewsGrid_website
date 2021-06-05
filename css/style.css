@@ -1,0 +1,330 @@
+:root{
+    --primary_color:#C72727;
+    --secondary_color:#F99500;
+    --light_color:#F3F3F3;
+    --dark_color:#333;
+
+    --color:#F2F0F2;
+
+    --max_width:1100px;
+}
+
+/* scope for some articles design??? */
+.category{
+  --sports_color:#F99500;
+  --entertainment_color:#A66BBE;
+  --tech_color:#009CFF;
+}
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+/* check out font staatliches */
+font-family: 'Lato', sans-serif;
+line-height: 1.5;
+background: var(--light_color);
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+img {
+    /* to prevent images from spreading past the  width of their container */
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:'Staatliches', cursive;
+    margin-bottom: .55rem;
+    line-height: 1.3;
+}
+
+p{
+    margin: .5rem 0;
+}
+/* utility classes */
+.container{
+    max-width: var(--max_width);
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+.category{
+    display: inline-block;
+    color: #FFF;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.6rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem; 
+}
+
+.category_sports{background: var(--sports_color);}
+.category_entertainment{background: var(--entertainment_color);}
+.category_tech{background: var(--tech_color);}
+
+.btn{
+    display: inline-block;
+    border:none ;
+    background: var(--dark_color);
+    color: #FFF;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn_light{ background: var(--light_color)}
+.btn_primary{ background: var(--primary_color)}
+.btn_secondary{ background: var(--psecondary_color)}
+
+.btn:hover{
+    /* this way it doesnt matter which color the button is, it would still
+       have an effect on it */
+   opacity: 0.9; 
+}
+
+/* incase i want to make the button go all the way across */
+.btn_block{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.card{
+    background: #FFF;
+    padding: 1rem;
+}
+
+.bg_dark{
+    background: var(--dark_color);
+    color: #FFF;
+}
+.bg_primary{
+    background: var(--primary_color);
+    color: #FFF;
+}
+.bg_secondary{
+    background: var(--secondary_color);
+    color: #FFF;
+}
+
+/* ctrl + d: to select the next occurence of the word */
+.bg_dark h1,
+.bg_dark h2,
+.bg_dark h3,
+.bg_dark a,
+.bg_primary h1,
+.bg_primary h2,
+.bg_primary h3,
+.bg_primary a,
+.bg_secondary h1,
+.bg_secondary h2,
+.bg_secondary h3,
+.bg_secondary a{
+    color: #FFF;
+}
+  
+.padding_y1{padding: 1.5rem 0}
+.padding_y2{padding: 2rem 0}
+.padding_y3{padding: 3rem 0}
+
+/* for padding all around */
+.padding_1{padding: 1.5rem}
+.padding_2{padding: 2rem}
+.padding_3{padding: 3rem}
+
+.large_heading{
+    font-size: 3rem;
+}
+
+.list li{
+    padding: .5rem;
+    border-bottom: #555 dotted 1px;
+    width: 90%;
+}
+
+.list li a:hover{
+    color: var(--primary_color) !important;
+}
+
+/* used in the About page and??? */
+/* inner page grid container */
+.page_container{
+    display:grid;
+    grid-template-columns:5fr 2fr;
+    margin: 2rem 0;
+    gap: 1.5rem;
+}
+
+.page_container > *:first-child{
+    grid-row: 1 /span 3;
+}
+
+/* end of utility classes */
+#main_nav{
+    background: #FFF;
+    position:sticky;
+    top: 0;
+    z-index: 2;
+}
+
+#main_nav .container{
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr;
+    padding: 1rem;
+    align-items: center;
+}
+
+#main_nav .logo{
+    width: 180px;    
+}
+#main_nav ul {
+    justify-self: end;
+    display:flex
+}
+#main_nav ul li a{
+    padding: 0.75rem;
+    font-weight: bold;
+}
+#main_nav ul li a.current{
+    background: var(--primary_color);
+    color: #FFF;
+}
+#main_nav ul li a:hover{
+    background: var(--light_color);
+    color: var(--dark_color);
+}
+
+/* for the social icons */
+#main_nav .social{
+    justify-self: center;
+}
+
+#main_nav .social i {
+    color:#777;
+    margin-right: .5rem;
+}
+
+/* showcase area */
+#showcase {
+    color: #FFF;
+    background: #333;
+    padding: 2rem;
+
+    /* something about elements with 'absolute' being placed 
+       in the first 'relative' div element */
+    position: relative;
+}
+
+/* to add image overlay */
+#showcase:before{
+    content: '';
+    background: url('../images/featured.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity:0.4;
+}
+
+#showcase .showcase_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+/* to make the text on the showcase(the one with the overlay)
+   readable */
+#showcase .showcase_content{
+   z-index: 1;
+}
+
+#showcase .showcase_content p {
+   margin-bottom: 1rem;
+}
+
+/* Home Articles */
+#home_articles .articles_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* any element that is a direct child of the articles container
+   is supposed to be a <div> */
+#home_articles .articles_container > *:first-child{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    /* to make it take up 2 spaces */
+    grid-column: 1 / span 2;
+    align-items: center;
+}
+#home_articles .articles_container > *:last-child{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    grid-column: 2 / span 2;
+}
+
+#main_footer {
+    background: var(--dark_color);
+    color: #FFF;
+}
+
+#main_footer img{
+    width: 150px;
+}
+
+#main_footer a{
+    color: #FFF; 
+}
+
+#main_footer .footer_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem ;
+}
+
+#main_footer .footer_container > *:last-child {
+   background: #444;
+   grid-column: 1 / span 4;
+   padding: .5rem;
+   text-align: center;
+   font-size: 0.75rem;
+}
+
+#main_footer .footer_container input[type='email']{
+    width: 90%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#main_footer .footer_container input[type='submit']{
+    width: 90%;
+}
+
+/* for the About page */
+
+/* for the Article page*/
+#article .meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:#EEE;
+    padding: 0.5rem;
+}
+
+#article .meta .category{
+    margin-top: 0.4rem;
+}

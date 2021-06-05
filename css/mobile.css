@@ -1,0 +1,102 @@
+/* navigation */
+#main_nav .social{
+    /* to make the social icons invisible */
+    display: none;
+}
+
+#main_nav .container{
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+#main_nav ul,
+#main_nav .logo {
+    justify-self: center;
+}
+
+#main_nav ul li a{
+    padding:0.5rem;
+}
+
+/* trying to set the grid columns in mobile size to 2 */
+#home_articles .articles_container{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* to properly position the columns(getting rid of the span) */
+#home_articles .articles_container > *:first-child,
+#home_articles .articles_container > *:last-child {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+}
+
+/* for smaller devices */
+@media(max-width:600px){
+  /* stackgrid items */
+   #showcase .showcase_container,
+   #home_articles .articles_container{
+       grid-template-columns: 1fr;
+   }
+
+   /* trying to stack the footer into 1 row */
+   #main_footer .footer_container{
+       grid-template-columns: 1fr;
+    }
+
+    /* adjusting the span of 4 on the last item else the
+       grid columns for the initial 4 wont work */
+    #main_footer .footer_container > *:last-child{
+        grid-column: 1;
+    }
+
+    /* to make the list items go all the way */
+    #main_footer .footer_container .list li {
+        width: 100%;
+    }
+
+    #main_footer .footer_container > *{
+        grid-column: 1;
+        align-self: center;
+        text-align: center;  
+
+        /* better way would be to set the border on only those that
+           require it */
+        /* border-bottom: #444 dotted 1px; */
+        padding-bottom: 1rem;  
+    }
+   
+   
+
+    /* to get rid of the last line in the links list */
+    /* #main_footer .footer_container .list > *:last-child,
+    #main_footer .footer_container > :nth-child(4){
+        border-bottom: none;
+    } */
+
+
+    /* setting the bottom border on only those that require it
+       instead of setting and removing it */
+    #main_footer .footer_container > *:first-child,
+    #main_footer .footer_container > *:nth-child(2){
+        border-bottom: #444 dotted 1px;
+        padding-bottom: 1rem;
+    }   
+
+    /* for the about page */
+    .page_container{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* tring to clear the row span set on 1 item*/
+    .page_container > *:first-child{
+        grid-row: 1;
+    }
+
+    /* reducing the font on really small devices*/
+    .large_heading{
+        font-size: 2rem;
+    }
+    
+}
+
