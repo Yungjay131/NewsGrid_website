@@ -32,7 +32,7 @@
                 <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
                 <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
                 <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-            </div>
+             </div>
 
             <ul>
                 <li><a  href="index.html">Home</a></li>
@@ -109,10 +109,12 @@
              <p>
                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
              </p>
-             <form action="">
-                 <input type="email" placeholder="Enter Email...">
-                 <input type="submit" value="Subscribe" class="btn btn_primary"> 
-             </form>
+              <!-- adding support for the form using Netlify i.e after it has
+                  been hosted -->
+                  <form name="contact" method="POST" data-netlify="true">
+                    <input type="email" placeholder="Enter Email...">
+                    <input type="submit" value="Subscribe" class="btn btn_primary"> 
+                </form>
          </div>
 
          <div>
